@@ -1,0 +1,10 @@
+-- set mapred.fairscheduler.pool=dsol;                                                                                   
+add jar /mnt/workflow_share/deploy/hive/dist/lijit_udf.jar;                           
+add jar /mnt/workflow_share/hive_udfs/experimental/hive-guava-udfs.jar;             
+set hive.support.concurrency=false;
+CREATE TEMPORARY FUNCTION parse_user_agent as 'com.lijit.hive.udf.useragent.UserAgent';
+CREATE TEMPORARY FUNCTION regURL as 'com.lijit.hive.udf.evaluation.NormalizeURL'; 
+CREATE TEMPORARY FUNCTION extractdomain as 'com.lijit.hive.udf.ExtractDomain'; 
+CREATE TEMPORARY FUNCTION top_private_domain AS 'com.sovrn.hive.udf.TopPrivateDomain';
+set hive.support.concurrency=true;
+
