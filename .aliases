@@ -1,14 +1,5 @@
 #!/usr/bin/env bash
 
-# SSH aliases
-alias mwork4="ssh -XY mwork4.dfw2.lijit.com"
-alias mwork1="ssh -XY mwork1.dfw2.lijit.com"
-alias mwork3="ssh -XY mwork3.dfw2.lijit.com"
-alias mwork2="ssh -XY mwork2.dfw2.lijit.com"
-alias dsapp1="ssh -XY dsapp1.dfw2.lijit.com"
-alias dsapp2="ssh -XY dsapp2.dfw2.lijit.com"
-alias fmwork="sftp mwork4.dfw2.lijit.com"
-
 # Easier navigation: .., ..., ...., ....., ~ and -
 alias ..="cd .."
 alias ...="cd ../.."
@@ -61,8 +52,8 @@ alias week='date +%V'
 # Stopwatch
 alias timer='echo "Timer started. Stop with Ctrl-D." && date && time cat && date'
 
-# Get macOS Software Updates, and update installed Ruby gems, Homebrew, npm, and their installed packages
-alias update='sudo softwareupdate -i -a; brew update; brew upgrade --all; brew cleanup; npm install npm -g; npm update -g; sudo gem update --system; sudo gem update'
+# Get macOS Software Updates, and update Homebrew, Rust
+alias update='sudo softwareupdate -i -a; brew update; brew upgrade --all; brew cleanup --prune 0; brew cleanup -s; rustup update;'
 
 # IP addresses
 alias ip="dig +short myip.opendns.com @resolver1.opendns.com"
@@ -87,11 +78,6 @@ command -v md5sum > /dev/null || alias md5sum="md5"
 
 # macOS has no `sha1sum`, so use `shasum` as a fallback
 command -v sha1sum > /dev/null || alias sha1sum="shasum"
-
-# JavaScriptCore REPL
-jscbin="/System/Library/Frameworks/JavaScriptCore.framework/Versions/A/Resources/jsc";
-[ -e "${jscbin}" ] && alias jsc="${jscbin}";
-unset jscbin;
 
 # Trim new lines and copy to clipboard
 alias c="tr -d '\n' | pbcopy"

@@ -38,7 +38,10 @@ fi;
 # Install `wget` with IRI support.
 brew install wget --with-iri
 
-brew install neovim --override-system-vi
+# Text editor (nvim)
+brew install neovim
+ln -fs /Users/c/dotfiles/init.vim /Users/c/.config/nvim/init.vim
+
 
 # 🐍
 brew install python
@@ -49,7 +52,7 @@ brew install pyenv
 
 # Statistical Softwares
 brew install openblas
-brew install r --with-lapack --with-openblas --enable-memory-profiling
+brew install r
 
 # Install other useful binaries.
 brew install bfg
@@ -61,6 +64,7 @@ brew install htop
 brew install jq
 brew install miller
 brew install ripgrep
+brew install rustup-init
 brew install shellcheck
 brew install speedtest_cli
 brew install thefuck
