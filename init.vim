@@ -1,4 +1,3 @@
-let g:python_host_prog = '/Users/c/.pyenv/shims/python2'
 let g:python3_host_prog = '/Users/c/.pyenv/versions/neovim3/bin/python'
 " ============================================================================
 " Source: https://raw.githubusercontent.com/fisadev/fisa-nvim-config/master/init.vim
@@ -43,9 +42,7 @@ if vim_plug_just_installed
     echo "Installing Bundles, please ignore key map error messages"
     :PlugInstall
 endif
-
 " ============================================================================
-
 " Enable line numbers
 set number
 "Enable syntax highlighting
